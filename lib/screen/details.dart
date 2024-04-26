@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'custom_container.dart';
 
 class details extends StatelessWidget {
 
@@ -83,68 +84,70 @@ class details extends StatelessWidget {
     );
   }
 }
-
 Widget buildPortraitLayout(context,pic){
+  double screenheight=MediaQuery.of(context).size.height;
+  double screenwidth=MediaQuery.of(context).size.width;
   return SingleChildScrollView(
     child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          height: 250,
-          width: 400,
-          // margin: EdgeInsets.all(1),
-          alignment: Alignment.bottomLeft,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(19),
-            image: DecorationImage(
-              image: AssetImage(pic),
-              fit: BoxFit.cover,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.50),
-                spreadRadius: 0,
-                blurRadius: 30,
-                offset: const Offset(0, 15),
-                blurStyle: BlurStyle.normal,
-              ),
-            ],
-          ),
-        ),
-        SizedBox(height:17),
         Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Text("Mood With Nature",
-              style: TextStyle(
-                  // fontWeight:FontWeight.bold,
-                fontSize: 25,
-              ),),
+            Container(
+              height: 250,
+              width: screenwidth*0.9,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(19),
+                image: DecorationImage(
+                  image: AssetImage(pic),
+                  fit: BoxFit.cover,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.20),
+                    spreadRadius: 0,
+                    blurRadius: 10,
+                    offset: const Offset(0, 15),
+                    blurStyle: BlurStyle.normal,
+                  ),
+                ],
+              ),
             ),
+
           ],
+        ),
+        SizedBox(height:17),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Text("Mood With Nature",
+            style: TextStyle(
+              // fontWeight:FontWeight.bold,
+              fontSize: 25,
+            ),),
         ),
         Wrap(
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Text("Being in nature, or even viewing scenes of nature, reduces anger, fear, and stress and increases pleasant feelings",
-              style: TextStyle(
-                fontSize: 16,
+                style: TextStyle(
+                  fontSize: 16,
 
-              ),
+                ),
               ),
             )
           ],
         ),
-        SizedBox(height:17),
+        SizedBox(height: 10,),
         Container(
-          width: 500,
+          width: screenwidth,
           child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF2CAB00),
                 foregroundColor: Colors.white,//text colour
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20),
 
                 ),
 
@@ -157,101 +160,220 @@ Widget buildPortraitLayout(context,pic){
                 padding: EdgeInsets.all(16),
               ),
               onPressed: (){}, child: Text("See More",style: TextStyle(
-            fontSize: 16
+              fontSize: 16
           ),)
           ),
         ),
-        
-        
-        
+        SizedBox(height: 17,),
+        Padding(
+          padding: const EdgeInsets.only(left: 17),
+          child: Text("Suggestions",
+            style: TextStyle(
+              // fontWeight:FontWeight.bold,
+              fontSize: 25,
+              color: Color(0xFF2CAB00),
+            ),),
+        ),
+        SizedBox(height: 17,),
+        Container(
+          height: 300,
+          width: screenwidth,
+          child: GridView.count(crossAxisCount: 2,
+          children: [
+            CustomContainer(
+              pic: "assets/mood_naruto.jpg",
+              text: "Mode",
+            ),
+            CustomContainer(
+              pic: "assets/mood_naruto.jpg",
+              text: "Mode",
+            ),
+
+          ],
+          ),
+        )
+
 
 
 
       ],
     ),
-
   );
 }
 
-Widget buildLandscapeLayout(context,pic){
-  return SingleChildScrollView(
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Column(
-          children: [
-            Container(
-              height: 250,
-              width: 300,
-              // margin: EdgeInsets.all(1),
-              alignment: Alignment.bottomLeft,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(19),
-                image: DecorationImage(
-                  image: AssetImage(pic),
-                  fit: BoxFit.cover,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.50),
-                    spreadRadius: 0,
-                    blurRadius: 30,
-                    offset: const Offset(0, 15),
-                    blurStyle: BlurStyle.normal,
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        SizedBox(width: 17,),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text("Mood With Nature",
-                    style: TextStyle(
-                      // fontWeight:FontWeight.bold,
-                      fontSize: 25,
-                    ),),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Container(
-                  height: 250,
-                  width: 450,
-                  // margin: EdgeInsets.all(1),
-                  child: Wrap(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Text("Being in nature, or even viewing scenes of nature, reduces anger, fear, and stress and increases pleasant feelings",
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-
-          ],
-        ),
-      ],
-      
-    ),
-    
+buildLandscapeLayout(context,pic){
+  return Center(
 
   );
 }
+// Widget buildPortraitLayout(context,pic){
+//   return SingleChildScrollView(
+//     child: Column(
+//       children: [
+//         Container(
+//           height: 250,
+//           width: 400,
+//           // margin: EdgeInsets.all(1),
+//           alignment: Alignment.bottomLeft,
+//           decoration: BoxDecoration(
+//             borderRadius: BorderRadius.circular(19),
+//             image: DecorationImage(
+//               image: AssetImage(pic),
+//               fit: BoxFit.cover,
+//             ),
+//             boxShadow: [
+//               BoxShadow(
+//                 color: Colors.black.withOpacity(0.50),
+//                 spreadRadius: 0,
+//                 blurRadius: 30,
+//                 offset: const Offset(0, 15),
+//                 blurStyle: BlurStyle.normal,
+//               ),
+//             ],
+//           ),
+//         ),
+//         SizedBox(height:17),
+//         Row(
+//           children: [
+//             Padding(
+//               padding: const EdgeInsets.all(10.0),
+//               child: Text("Mood With Nature",
+//               style: TextStyle(
+//                   // fontWeight:FontWeight.bold,
+//                 fontSize: 25,
+//               ),),
+//             ),
+//           ],
+//         ),
+//         Wrap(
+//           children: [
+//             Padding(
+//               padding: const EdgeInsets.only(left: 10),
+//               child: Text("Being in nature, or even viewing scenes of nature, reduces anger, fear, and stress and increases pleasant feelings",
+//               style: TextStyle(
+//                 fontSize: 16,
+//
+//               ),
+//               ),
+//             )
+//           ],
+//         ),
+//         SizedBox(height:17),
+//         Container(
+//           width: 500,
+//           child: ElevatedButton(
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Color(0xFF2CAB00),
+//                 foregroundColor: Colors.white,//text colour
+//                 shape: RoundedRectangleBorder(
+//                     borderRadius: BorderRadius.circular(20),
+//
+//                 ),
+//
+//                 //Text style hbe..
+//                 textStyle: TextStyle(
+//                   fontSize: 15,
+//                   fontWeight: FontWeight.w700, //bold hbe
+//                 ),
+//                 //pading dite pari
+//                 padding: EdgeInsets.all(16),
+//               ),
+//               onPressed: (){}, child: Text("See More",style: TextStyle(
+//             fontSize: 16
+//           ),)
+//           ),
+//         ),
+//
+//
+//
+//
+//
+//
+//       ],
+//     ),
+//
+//   );
+// }
+//
+// Widget buildLandscapeLayout(context,pic){
+//   return SingleChildScrollView(
+//     child: Row(
+//       mainAxisAlignment: MainAxisAlignment.start,
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         Column(
+//           children: [
+//             Container(
+//               height: 250,
+//               width: 300,
+//               // margin: EdgeInsets.all(1),
+//               alignment: Alignment.bottomLeft,
+//               decoration: BoxDecoration(
+//                 borderRadius: BorderRadius.circular(19),
+//                 image: DecorationImage(
+//                   image: AssetImage(pic),
+//                   fit: BoxFit.cover,
+//                 ),
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.black.withOpacity(0.50),
+//                     spreadRadius: 0,
+//                     blurRadius: 30,
+//                     offset: const Offset(0, 15),
+//                     blurStyle: BlurStyle.normal,
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ],
+//         ),
+//         SizedBox(width: 17,),
+//         Column(
+//           mainAxisAlignment: MainAxisAlignment.start,
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.start,
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Padding(
+//                   padding: const EdgeInsets.all(10.0),
+//                   child: Text("Mood With Nature",
+//                     style: TextStyle(
+//                       // fontWeight:FontWeight.bold,
+//                       fontSize: 25,
+//                     ),),
+//                 ),
+//               ],
+//             ),
+//             Row(
+//               children: [
+//                 Container(
+//                   height: 250,
+//                   width: 450,
+//                   // margin: EdgeInsets.all(1),
+//                   child: Wrap(
+//                     children: [
+//                       Padding(
+//                         padding: const EdgeInsets.only(left: 10),
+//                         child: Text("Being in nature, or even viewing scenes of nature, reduces anger, fear, and stress and increases pleasant feelings",
+//                           style: TextStyle(
+//                             fontSize: 16,
+//                           ),
+//                         ),
+//                       )
+//                     ],
+//                   ),
+//                 ),
+//               ],
+//             ),
+//
+//           ],
+//         ),
+//       ],
+//
+//     ),
+//
+//
+//   );
+// }
