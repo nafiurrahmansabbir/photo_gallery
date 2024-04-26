@@ -92,6 +92,7 @@ Widget buildPortraitLayout(context,pic){
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // picture
         Row(
           children: [
             Container(
@@ -118,6 +119,7 @@ Widget buildPortraitLayout(context,pic){
           ],
         ),
         SizedBox(height:17),
+        // heading
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Text("Mood With Nature",
@@ -126,6 +128,7 @@ Widget buildPortraitLayout(context,pic){
               fontSize: 25,
             ),),
         ),
+        // title
         Wrap(
           children: [
             Padding(
@@ -140,6 +143,7 @@ Widget buildPortraitLayout(context,pic){
           ],
         ),
         SizedBox(height: 10,),
+        // button
         Container(
           width: screenwidth,
           child: ElevatedButton(
@@ -165,6 +169,7 @@ Widget buildPortraitLayout(context,pic){
           ),
         ),
         SizedBox(height: 17,),
+        // Suggetion
         Padding(
           padding: const EdgeInsets.only(left: 17),
           child: Text("Suggestions",
@@ -175,6 +180,7 @@ Widget buildPortraitLayout(context,pic){
             ),),
         ),
         SizedBox(height: 17,),
+        // suggetion Card
         Container(
           height: 300,
           width: screenwidth,
@@ -202,7 +208,108 @@ Widget buildPortraitLayout(context,pic){
 }
 
 buildLandscapeLayout(context,pic){
-  return Center(
+  double screenheight=MediaQuery.of(context).size.height;
+  double screenwidth=MediaQuery.of(context).size.width;
+  return SingleChildScrollView(
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Center(
+          child: Container(
+            height: 250,
+            width: screenwidth*0.37,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(19),
+              image: DecorationImage(
+                image: AssetImage(pic),
+                fit: BoxFit.cover,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.20),
+                  spreadRadius: 0,
+                  blurRadius: 10,
+                  offset: const Offset(0, 15),
+                  blurStyle: BlurStyle.normal,
+                ),
+              ],
+            ),
+          ),
+        ),
+        SizedBox(width: 17,),
+        Expanded(child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text("Mood With Nature",
+                style: TextStyle(
+                  // fontWeight:FontWeight.bold,
+                  fontSize: 25,
+                ),),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 12),
+              child: Text("Being in nature, or even viewing scenes of nature, reduces anger, fear, and stress and increases pleasant feelings"),
+            ),
+            SizedBox(height: 17,),
+            Container(
+              width: screenwidth,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF2CAB00),
+                    foregroundColor: Colors.white,//text colour
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
 
+                    ),
+
+                    //Text style hbe..
+                    textStyle: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700, //bold hbe
+                    ),
+                    //pading dite pari
+                    padding: EdgeInsets.all(16),
+                  ),
+                  onPressed: (){}, child: Text("See More",style: TextStyle(
+                  fontSize: 16
+              ),)
+              ),
+            ),
+            SizedBox(height: 17,),
+            // Suggetion
+            Padding(
+              padding: const EdgeInsets.only(left: 17),
+              child: Text("Suggestions",
+                style: TextStyle(
+                  // fontWeight:FontWeight.bold,
+                  fontSize: 25,
+                  color: Color(0xFF2CAB00),
+                ),),
+            ),
+            SizedBox(height: 17,),
+            // suggetion Card
+            Container(
+              height: 300,
+              width: screenwidth,
+              child: GridView.count(crossAxisCount: 2,
+                children: [
+                  CustomContainer(
+                    pic: "assets/dawn.jpg",
+                    text: "Dawn",
+                  ),
+                  CustomContainer(
+                    pic: "assets/leaves.jpg",
+                    text: "Leaves",
+                  ),
+
+                ],
+              ),
+            )
+          ],
+        ))
+      ],
+    ),
   );
 }
