@@ -16,8 +16,8 @@ class CustomContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
 
-      height: 155,
-      width: 155,
+      height: 180,
+      width: 180,
       // width: 155,
       // color: Colors.red,
       margin: EdgeInsets.all(10),
@@ -36,7 +36,7 @@ class CustomContainer extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.20),
             spreadRadius: 0,
-            blurRadius: 30,
+            blurRadius: 10,
             offset: const Offset(0, 15),
             blurStyle: BlurStyle.normal,
           ),

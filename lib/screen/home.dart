@@ -73,322 +73,267 @@ class Home extends StatelessWidget {
           },
         ),
       ),
+
     );
   }
 }
 
 Widget buildPortraitLayout(context){
-  return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      mainAxisSize: MainAxisSize.max,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/mood_naruto.jpg",
-                      appbar_text: "Mode",
-
-                    )
-                ));
-              },
-              child: CustomContainer(
+  return GridView.count(crossAxisCount: 2,
+    children: [
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/mood_naruto.jpg",
-                text: "Mode",
-              ),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/mood.jpg",
-                      appbar_text: "Asthetic",
+                appbar_text: "Mode",
 
-                    )
-                ));
-              },
-              child: CustomContainer(
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/mood_naruto.jpg",
+          text: "Mode",
+        ),
+      ),
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/mood.jpg",
-                text: "Asthetic",
-              ),
-            ),
+                appbar_text: "Asthetic",
 
-          ],
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/mood.jpg",
+          text: "Asthetic",
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/animal.jpg",
-                      appbar_text: "Animals",
+      ),
 
-                    )
-                ));
-              },
-              child: CustomContainer(
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/animal.jpg",
-                text: "Animals",
-              ),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/city.jpg",
-                      appbar_text: "City",
+                appbar_text: "Animals",
 
-                    )
-                ));
-              },
-              child: CustomContainer(
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/animal.jpg",
+          text: "Animals",
+        ),
+      ),
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/city.jpg",
-                text: "City",
-              ),
-            ),
+                appbar_text: "City",
 
-          ],
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/city.jpg",
+          text: "City",
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/travel.jpg",
-                      appbar_text: "Travel",
+      ),
 
-                    )
-                ));
-              },
-              child: CustomContainer(
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/travel.jpg",
-                text: "Travel",
-              ),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/sky.jpg",
-                      appbar_text: "Sky",
+                appbar_text: "Travel",
 
-                    )
-                ));
-              },
-              child: CustomContainer(
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/travel.jpg",
+          text: "Travel",
+        ),
+      ),
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/sky.jpg",
-                text: "Sky",
-              ),
-            ),
+                appbar_text: "Sky",
 
-          ],
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/sky.jpg",
+          text: "Sky",
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/road.jpg",
-                      appbar_text: "Road",
-
-                    )
-                ));
-              },
-              child: CustomContainer(
+      ),
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/road.jpg",
-                text: "Road",
-              ),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/flower.jpg",
-                      appbar_text: "Flowers",
+                appbar_text: "Road",
 
-                    )
-                ));
-              },
-              child: CustomContainer(
-                pic: "assets/flower.jpg",
-                text: "Flowers",
-              ),
-            ),
-
-          ],
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/road.jpg",
+          text: "Road",
         ),
+      ),
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
+                pic: "assets/sky.jpg",
+                appbar_text: "Sky",
+
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/sky.jpg",
+          text: "Sky",
+        ),
+      ),
 
 
-
-
-
-      ],
-    ),
-  );
+    ],);
 }
 
 Widget buildLandscapeLayout(context){
-  return SingleChildScrollView(
-    scrollDirection: Axis.vertical,
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/mood_naruto.jpg",
-                      appbar_text: "Mode",
-
-                    )
-                ));
-              },
-              child: CustomContainer(
+  return GridView.count(crossAxisCount: 4,
+    children: [
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/mood_naruto.jpg",
-                text: "Mode",
-              ),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/mood.jpg",
-                      appbar_text: "Asthetic",
+                appbar_text: "Mode",
 
-                    )
-                ));
-              },
-              child: CustomContainer(
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/mood_naruto.jpg",
+          text: "Mode",
+        ),
+      ),
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/mood.jpg",
-                text: "Asthetic",
-              ),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/animal.jpg",
-                      appbar_text: "Animals",
+                appbar_text: "Asthetic",
 
-                    )
-                ));
-              },
-              child: CustomContainer(
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/mood.jpg",
+          text: "Asthetic",
+        ),
+      ),
+
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/animal.jpg",
-                text: "Animals",
-              ),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/city.jpg",
-                      appbar_text: "City",
+                appbar_text: "Animals",
 
-                    )
-                ));
-              },
-              child: CustomContainer(
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/animal.jpg",
+          text: "Animals",
+        ),
+      ),
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/city.jpg",
-                text: "City",
-              ),
-            ),
+                appbar_text: "City",
 
-          ],
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/city.jpg",
+          text: "City",
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/travel.jpg",
-                      appbar_text: "Travel",
+      ),
 
-                    )
-                ));
-              },
-              child: CustomContainer(
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
                 pic: "assets/travel.jpg",
-                text: "Travel",
-              ),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/sky.jpg",
-                      appbar_text: "Sky",
+                appbar_text: "Travel",
 
-                    )
-                ));
-              },
-              child: CustomContainer(
-                pic: "assets/sky.jpg",
-                text: "Sky",
-              ),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/road.jpg",
-                      appbar_text: "Road",
-
-                    )
-                ));
-              },
-              child: CustomContainer(
-                pic: "assets/road.jpg",
-                text: "Road",
-              ),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>details(
-                      pic: "assets/sky.jpg",
-                      appbar_text: "Sky",
-
-                    )
-                ));
-              },
-              child: CustomContainer(
-                pic: "assets/sky.jpg",
-                text: "Sky",
-              ),
-            ),
-
-          ],
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/travel.jpg",
+          text: "Travel",
         ),
+      ),
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
+                pic: "assets/sky.jpg",
+                appbar_text: "Sky",
+
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/sky.jpg",
+          text: "Sky",
+        ),
+      ),
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
+                pic: "assets/road.jpg",
+                appbar_text: "Road",
+
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/road.jpg",
+          text: "Road",
+        ),
+      ),
+      GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context)=>details(
+                pic: "assets/sky.jpg",
+                appbar_text: "Sky",
+
+              )
+          ));
+        },
+        child: CustomContainer(
+          pic: "assets/sky.jpg",
+          text: "Sky",
+        ),
+      ),
 
 
-      ],
-    ),
-  );
+    ],);
 }

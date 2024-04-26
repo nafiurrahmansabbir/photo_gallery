@@ -161,6 +161,9 @@ Widget buildPortraitLayout(context,pic){
           ),)
           ),
         ),
+        
+        
+        
 
 
 
