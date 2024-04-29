@@ -94,6 +94,7 @@ Widget buildPortraitLayout(context,pic){
       children: [
         // picture
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               height: 250,
