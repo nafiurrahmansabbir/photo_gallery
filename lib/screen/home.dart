@@ -322,15 +322,15 @@ Widget buildLandscapeLayout(context){
         onTap: (){
           Navigator.push(context, MaterialPageRoute(
               builder: (context)=>details(
-                pic: "assets/sky.jpg",
-                appbar_text: "Sky",
+                pic: "assets/flower.jpg",
+                appbar_text: "Flowers",
 
               )
           ));
         },
         child: CustomContainer(
-          pic: "assets/sky.jpg",
-          text: "Sky",
+          pic: "assets/flower.jpg",
+          text: "Flowers",
         ),
       ),
 

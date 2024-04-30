@@ -85,7 +85,7 @@ class details extends StatelessWidget {
   }
 }
 Widget buildPortraitLayout(context,pic){
-  double screenheight=MediaQuery.of(context).size.height;
+  // double screenheight=MediaQuery.of(context).size.height;
   double screenwidth=MediaQuery.of(context).size.width;
   return SingleChildScrollView(
     child: Column(
@@ -209,7 +209,7 @@ Widget buildPortraitLayout(context,pic){
 }
 
 buildLandscapeLayout(context,pic){
-  double screenheight=MediaQuery.of(context).size.height;
+  // double screenheight=MediaQuery.of(context).size.height;
   double screenwidth=MediaQuery.of(context).size.width;
   return SingleChildScrollView(
     child: Row(
@@ -294,7 +294,8 @@ buildLandscapeLayout(context,pic){
             Container(
               height: 300,
               width: screenwidth,
-              child: GridView.count(crossAxisCount: 2,
+              child: GridView.count(
+                crossAxisCount: 2,
                 children: [
                   CustomContainer(
                     pic: "assets/dawn.jpg",
